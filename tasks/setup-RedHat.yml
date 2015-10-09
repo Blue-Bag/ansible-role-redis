@@ -1,3 +1,4 @@
 ---
 - name: Ensure redis is installed (RedHat).
   yum: name=redis state=installed enablerepo=epel
+  sudo: true

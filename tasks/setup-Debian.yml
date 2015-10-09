@@ -1,3 +1,4 @@
 ---
 - name: Ensure redis is installed (Debian).
   apt: name=redis-server state=installed
+  sudo: true
