@@ -17,6 +17,17 @@
     mode: 0644
   notify: restart redis
 
+- name: Ensure Redis pid folder is present and redis user allowed
+  file:
+    path: /var/run/redis
+    state: directory
+    owner: "{{redis_user}}"
+    group: "{{redis_group}}"
+    mode: 0755
+  notify: restart redis
+  sudo: true
+
+# http://stackoverflow.com/questions/25515166/redis-daemon-not-creating-a-pid-file
 - name: Ensure redis is running and enabled on boot.
   service: "name={{ redis_daemon }} state=started enabled=yes"
   sudo: true
