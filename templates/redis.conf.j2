@@ -43,3 +43,8 @@ no-appendfsync-on-rewrite no
 {% for include in redis_includes %}
 include {{ include }}
 {% endfor %}
+
+
+#see http://download.redis.io/redis-stable/redis.conf
+#protected-mode yes
+#stop-writes-on-bgsave-error yes
