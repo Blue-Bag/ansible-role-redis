@@ -1,6 +1,5 @@
 ---
 - name: Ensure Redis is installed.
-  apt:
+  pacman:
     name: "{{ redis_package }}"
     state: present
-  become: true

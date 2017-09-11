@@ -1,4 +1,6 @@
 ---
-- name: Ensure redis is installed (RedHat).
-  yum: name=redis state=installed enablerepo=epel
-  become: true
+- name: Ensure Redis is installed.
+  package:
+    name: "{{ redis_package }}"
+    state: present
+    enablerepo: "{{ redis_enablerepo }}"
